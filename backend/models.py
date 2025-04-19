@@ -1,5 +1,16 @@
 from sqlalchemy import Column, Integer, String, Text, Float, DateTime, func
-from .database import Base
+
+# Try different import paths to work in both contexts
+try:
+    # When imported as part of the backend package
+    from backend.database import Base
+except ImportError:
+    try:
+        # When imported directly in the backend directory
+        from database import Base
+    except ImportError:
+        # When imported with relative imports
+        from .database import Base
 
 
 class OutreachLog(Base):
