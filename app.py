@@ -2,10 +2,10 @@ import streamlit as st
 import sys
 import os
 
-# explicitly set backend path
-sys.path.append(os.path.abspath("backend"))
+# Add backend package clearly and explicitly
+sys.path.append(os.path.abspath("."))
 
-from pipeline import main as pipeline_main
+from backend.pipeline import main as pipeline_main
 
 st.set_page_config(page_title="Bob Outreach Tool", layout="centered")
 

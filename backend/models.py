@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text, Float, DateTime, func
-from database import Base
+from .database import Base
 
 
 class OutreachLog(Base):

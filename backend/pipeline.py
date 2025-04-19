@@ -1,11 +1,11 @@
-from scraper import hitta_foretag, hitta_allabolag
-from ai_analysis import analyze_website
-from social_analysis import get_instagram_data
+from .scraper import hitta_foretag, hitta_allabolag
+from .ai_analysis import analyze_website
+from .social_analysis import get_instagram_data
 from sqlalchemy.orm import Session
-import models
-from database import SessionLocal
+from . import models
+from .database import SessionLocal
 
-def full_pipeline(keyword, location):
+def main(keyword, location):
     db = SessionLocal()
 
     # Steg 1: Skrapa data från hitta.se och allabolag
