@@ -1,6 +1,10 @@
 import streamlit as st
 import sys
 import os
+from backend.database import engine, Base
+from backend.models import CompanyProfile
+
+Base.metadata.create_all(bind=engine)
 
 # Ensure the app can find the backend package regardless of how it's run
 try:
